@@ -34,5 +34,7 @@ class ApplicationController < Sinatra::Base
     erb :edit
   end
   
+  get '/recipes/:id/edit' do
+  
   
 end
