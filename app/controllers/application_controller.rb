@@ -28,16 +28,16 @@ class ApplicationController < Sinatra::Base
     erb :edit
   end
   
+  patch '/recipes/:id' do
+    recipe = Recipe.find_by_id(params[:id])
+    recipe.update(params)
+  end
+  
   delete '/recipes/:id' do 
     recipe = Recipe.find_by_id(params[:id])
     recipe.delete
     redirect '/recipes'
   end
   
-  
-  patch '/recipes/:id' do
-    recipe = Recipe.find_by_id(params[:id])
-    recipe.update(params)
-  end
   
 end
