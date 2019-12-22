@@ -4,6 +4,10 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
-  # code actions here!
-
+  get '/recipes' do #loads index page
+    @recipes = Recipe.all
+    binding.pry
+    erb :index
+  end
+  
 end
